@@ -1,0 +1,55 @@
+{
+	"name": "nb_dca_gold_kpi5_work_order_closeout",
+	"properties": {
+		"folder": {
+			"name": "delta_agpr_dca/04 - KPI Calculations"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "synspsmlaue",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "ce49fb57-eb3d-42c6-ae1b-783e858602e9"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/c8f59065-5ef3-44e2-a2d1-a50b3e30f699/resourceGroups/RG-DOF-AGPR-DW-DEVPTS-AUE/providers/Microsoft.Synapse/workspaces/synws-dof-agpr-dw-devpts-aue/bigDataPools/synspsmlaue",
+				"name": "synspsmlaue",
+				"type": "Spark",
+				"endpoint": "https://synws-dof-agpr-dw-devpts-aue.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/synspsmlaue",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "3.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"automaticScaleJobs": false
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": []
+    }
+}
