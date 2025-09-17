@@ -137,8 +137,13 @@ class SynapseNotebookFormat(NotebookFormat):
                 "source": cell_content_lines
             }
 
+            cell_metadata = {}
             if len(cell.attributes) > 0: 
-                cell_data["tags"] = cell.attributes
+                cell_metadata["tags"] = cell.attributes
+
+            if len(cell_metadata) > 0: 
+                cell_data["metadata"] = cell_metadata
+
 
             cell_data["execution_count"] = 0
 
