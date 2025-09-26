@@ -21,7 +21,7 @@ def get_property_by_path(o, path):
         value = value[part]
 
 
-    if type(value) not in [int, float, str]: 
+    if type(value) not in [int, float, str, bool]: 
         return None
 
     return value
@@ -29,6 +29,9 @@ def get_property_by_path(o, path):
 def value_str(value) -> str: 
     if type(value) is str:
         return '"' + value.replace('\\', '\\\\').replace('"', '\\"') + '"'
+
+    if type(value) is bool: 
+        return str(value).lower()
 
     return str(value)
 
@@ -44,6 +47,9 @@ def parse_value(value_str):
         return float(value_str)
     except: 
         pass
+
+    if value_str in ['true', 'false']: 
+        return value_str == 'true'
 
     return None
 
@@ -87,7 +93,9 @@ class SynapseNotebookFormat(NotebookFormat):
         "folder": "folder.name",
         "nbformat": "nbformat",
         "nbformat_minor": "nbformat_minor",
-        "language": "metadata.language_info.name"
+        "language": "metadata.language_info.name",
+        "save_output": "metadata.saveOutput",
+        "enable_debug_mode": "metadata.enableDebugMode"
     }
 
 
